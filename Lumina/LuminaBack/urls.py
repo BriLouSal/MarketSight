@@ -14,6 +14,8 @@ import yfinance as yf
 urlpatterns = [
     path('', views.home, name='home'),
     path('room/', views.room, name='room'),
+    path('stock/', views.stock, name='stock'),
+    path('login/', views.signup, name='login'),
     
 ]
 

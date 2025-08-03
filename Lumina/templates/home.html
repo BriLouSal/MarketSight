@@ -10,12 +10,13 @@
 </head>
 <body>
 
-   
+   {% block content %}
    <!-- Div: Links Navbar -->
  <div class="navbar">
-    <a href="stock.html">Search</a>
-    <a href="portfolio_room.html">Portfolio</a>
-    <a href="home.html">Home</a>
+    <a href="{% url 'stock' %}">Search</a>
+    <a href="{% url 'room' %}">Portfolio</a>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'login' %}">Login</a>
     <!-- For Portfolio, I wanna have a redirection if the condiition is not met that will make sure users are signed up --> 
  </div>
 
@@ -29,8 +30,9 @@
 
 <p>Feel free to explore the links in the navigation bar above to access different sections of our site.</p>
 
-<p>If you have any questions or need assistance, please don't hesitate to reach out. <a href=""></a></p>
+<p>If you have any questions or need assistance, please don't hesitate to reach out. <a href="signup.html"></a></p>
 
+ {% endblock content %}
 
 </body>
 </html>
