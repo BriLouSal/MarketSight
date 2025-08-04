@@ -11,6 +11,12 @@ user = "Louie"
 
 
 
+ticker = [
+    {'id': 1, 'stock': 'AAPL'}, # We're eventually gonna add price
+    {'id': 2, 'stock': 'UNH' },
+    {'id': 3, 'stock': 'NVDA'},
+
+]
 
 
 
@@ -20,7 +26,8 @@ def home(request):
 
 
 def room(request):
-    return render(request, 'portfolio_room.html')
+    context = {'ticker': ticker}
+    return render(request, 'portfolio_room.html', context)
 
 def stock(request):
     return render(request, 'stock.html')
