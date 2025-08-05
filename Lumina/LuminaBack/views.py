@@ -25,11 +25,11 @@ def home(request):
     return render(request, 'home.html')
 
 
-def room(request):
+def portfolio_room(request):
     context = {'ticker': ticker}
     return render(request, 'portfolio_room.html', context)
 
-def stock(request):
+def stock(request, stock_ticker):
     return render(request, 'stock.html')
 
 
@@ -42,6 +42,9 @@ def signup(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def assistance(request):
+    return render(request, 'Assistance.html')
 
 
 
