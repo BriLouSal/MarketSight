@@ -3,14 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static 'css/Assistance.css' %}"> -->
+     <link rel="stylesheet" href="/Lumina/static/assistance.css">
     <title>Document</title>
 </head>
 <body>
 
+    <!-- This will be like a border of the card that's gonna have support -->
     <div class="border">
-        
-
+        <div class="card">
+            <img src="" alt=""> <!-- Image for support -->
+            <h1>Service</h1>
+            <p>If you have any questions or need help, please reach out to our support team.</p>
+            <!-- This will lead you to go to AI -->
+        </div>
     </div>
+
+
+    <!-- For this one, we wanna create specific support: input -->
+    <div class="border2">
+        <div class="card2">
+            <h1>Contact Us</h1>
+            <form action="">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     
 </body>
 </html>
