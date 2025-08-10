@@ -4,20 +4,27 @@ from django.db import models
 
 #  Creating Users 
 class User(models.Model):
-    username = models.CharField(max_length=100, unique=True)
-    email = models.EmailField(unique=True)
+    username = models.CharField(max_length=100, null=True)
+    email = models.EmailField(null=True)
+    password = models.CharField(max_length=100)
+    created = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return self.username
+class Portfolio(models.Model):
+    name = models.CharField(max_length=100)
+    ticker = models.CharField(max_length=10)
+    description = models.TextField(null=True, blank=True)
+    def __str__(self):
+        return f"{self.name} ({self.ticker})"
 
 
 
-class Stock_Portfolio(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    stock_ticker = models.CharField(max_length=10)
-    quantity = models.IntegerField()
-    purchase_price = models.DecimalField(max_digits=10, decimal_places=2)
-    purchase_date = models.DateField()
 
+#  Creating Portfolio
 
     
+
+
 
 
 

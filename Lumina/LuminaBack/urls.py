@@ -18,9 +18,11 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('signup/',views.signup, name='signup'),
     path('support/',views.assistance, name='assistance'),
-
     
 ]
+
+
+
 
 
 

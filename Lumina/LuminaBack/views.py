@@ -56,11 +56,14 @@ def portfolio(request):
     return render(request, 'portfolio.html')
 
 def signup(request):
+    
     return render(request, 'signup.html')
+
 
 
 def login(request):
     return render(request, 'login.html')
+
 
 def assistance(request):
     return render(request, 'Assistance.html')
