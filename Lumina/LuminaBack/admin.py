@@ -4,23 +4,20 @@ from django.contrib import admin
 
 
 
-from .models import User
+from .models import User, Portfolio
+
+
+admin.site.register(User)
 
 
 
 
-class StockAdmin(admin.ModelAdmin):
-    list_display = ('name', 'symbol')
-    search_fields = ('name', 'symbol')
-    list_filter = ('name',)
-    ordering = ('name',)
-    list_per_page = 10
+admin.site.register(Portfolio)
 
 
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'email')
-    search_fields = ('username', 'email')
-    list_filter = ('username',)
+
+
+
 
 
 

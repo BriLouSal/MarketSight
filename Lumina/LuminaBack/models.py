@@ -10,6 +10,8 @@ class User(models.Model):
     created = models.DateField(auto_now_add=True)
     def __str__(self):
         return self.username
+
+
 class Portfolio(models.Model):
     name = models.CharField(max_length=100)
     ticker = models.CharField(max_length=10)

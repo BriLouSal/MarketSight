@@ -27,5 +27,7 @@ urlpatterns = [
 
 
 
+
+
 # room/<str:room_number> - This will match URLs like /room/1, /room/2, and so on. The <str:room_number> part of the URL captures the room number as a string.
 
