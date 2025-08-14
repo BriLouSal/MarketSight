@@ -25,6 +25,7 @@ ticker = [
 
 
 def index(request):
+    # We need the index to have the greatest gain of the stock market
     return render(request, 'base/index.html')
 
 def home(request):

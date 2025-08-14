@@ -1,17 +1,17 @@
 
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/Lumina/static/style.css">
+   <link rel="stylesheet" href="{%  static 'style.css' %}">
    <title>Document</title>
    
 </head>
 <body>
 
-   {% block content %}
    <!-- Div: Links Navbar -->
      <div class="navbar">
     <a href="{% url 'assistance' %}">Support</a>
@@ -24,20 +24,27 @@
  
 
    <div class="search-bar">
-      <input type="text" placeholder="Search...">
-      <button type="submit">Search</button>
+      <h1>Lumina</h1>
+      <div class="search-container">
+         <input type="text" placeholder="Search...">
+         <button type="submit">Search</button>
       
+      </div>
+
    </div>
 
-
-
-
+   <!-- Div: Top Performer Today -->
  <div class="top-performer">
   
    <h1>Top Performer Today:</h1>
+
    
+
  </div>
  {% endblock content %}
+
+
+
 
 
 
