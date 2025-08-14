@@ -3,19 +3,18 @@ from django.http import HttpResponse
 import yfinance as yf
 import matplotlib.pyplot as plt
 import csv as cs
+from .models import User, Portfolio
 
 
+
+#  This is the views.py file where we will handle the logic for our application
+#  We will create views for home, portfolio room, stock, login, signup, and assistance
 
 user = "Louie"
 
 
 
-
-
-
-
-
-
+#  This is a list of stocks that we will use to display in the portfolio room
 ticker = [
     {'id': 1, 'stock': 'AAPL'}, # We're eventually gonna add price
     {'id': 2, 'stock': 'UNH' },
@@ -23,33 +22,19 @@ ticker = [
 
 ]
 
-def find_highest_performer():
-    # This function will find the highest performing stock from the ticker list
-    pass
-
-
-
-
-
-
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'base/home.html')
 
 
 def portfolio_room(request):
     context = {'ticker': ticker}
     return render(request, 'portfolio_room.html', context)
 
-def stock(request, stock_ticker):
-    stock_room = None
-    for i in ticker:
-        if i['id'] == int(stock_ticker):
-            stock_room = i
-
+def stock(request):
     context = {'ticker': ticker}
-    return render(request, 'stock.html', context)
+    return render(request, 'base/stock.html', context)
 
 
 def portfolio(request):
@@ -58,6 +43,7 @@ def portfolio(request):
 def signup(request):
     
     return render(request, 'signup.html')
+
 
 
 

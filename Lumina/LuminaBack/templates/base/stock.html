@@ -8,12 +8,9 @@
 
 <div>
     <div>
-        <h1>Stock Portfolio</h1>
         {% for stocks in ticker %}
         <div>
-            {{stocks.id}}:{{stocks.stock}}
-
-            <h1>Welcome to {{stocks.room}}</h1>
+            {{stocks.id}}: {{stocks.stock}}
 
         </div>
          {% endfor %}
