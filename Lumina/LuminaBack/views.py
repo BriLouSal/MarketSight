@@ -25,14 +25,13 @@ ticker = [
 
 
 def index(request):
-    # We need the index to have the greatest gain of the stock market
-    return render(request, 'base/index.html')
+    return render(request, 'base/search.html')
 
 def home(request):
     return render(request, 'base/home.html')
 
 
-def portfolio_room(request):
+def portfolio_room(request, stock_tick):
     context = {'ticker': ticker}
     return render(request, 'portfolio_room.html', context)
 
