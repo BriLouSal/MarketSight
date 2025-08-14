@@ -11,6 +11,7 @@
    
 </head>
 <body>
+   {% block content %}
 
    <!-- Div: Links Navbar -->
      <div class="navbar">
@@ -26,8 +27,12 @@
    <div class="search-bar">
       <h1>Lumina</h1>
       <div class="search-container">
-         <input type="text" placeholder="Search...">
+         <form action="">
+          <input type="text" placeholder="Search for Stocks..." name="search" required>
          <button type="submit">Search</button>
+
+       </form>
+
       
       </div>
 
