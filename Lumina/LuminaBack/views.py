@@ -22,9 +22,13 @@ ticker = [
 
 ]
 
+def stock_information():
+    # This function will fetch stock information from yfinance
+    pass
 
 
 def index(request):
+    # This is the index view where we will display the home page/search page
     return render(request, 'base/search.html')
 
 def home(request):

@@ -69,6 +69,7 @@ a
     justify-content: center;
     align-items: center;
     margin-top: 150px;
+    color: #fff;
 }
 
 .search-bar input[type="text"] {
