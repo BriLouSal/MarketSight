@@ -57,7 +57,7 @@ a
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 250px;
+    margin-top: 150px;
     gap: 15px;
 
 
@@ -68,8 +68,12 @@ a
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
-    color: #fff;
+    margin-top: 100px;
+}
+
+.top-performer h1{
+        font: #fff;
+        font-size: 35px;
 }
 
 .search-bar input[type="text"] {

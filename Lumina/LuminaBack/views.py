@@ -44,6 +44,9 @@ def portfolio_room(request):
 
 def stock(request, stock_tick):
     stock_info = None
+    for i in ticker:
+        if i['id'] == str(stock_tick):
+            stock_info = i
     context = {'ticker': ticker}
     return render(request, 'base/stock.html', context)
 
@@ -53,6 +56,9 @@ def portfolio(request):
 
 def signup(request):
     return render(request, 'signup.html')
+
+
+
 
 
 
