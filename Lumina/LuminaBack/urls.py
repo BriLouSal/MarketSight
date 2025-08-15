@@ -12,7 +12,7 @@ import yfinance as yf
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.search, name='search'),
     path('home/',  views.home, name='home'),
     path('room/',  views.portfolio_room, name='room'),
     path('stock/<str:stock_tick>', views.stock, name='stock'),

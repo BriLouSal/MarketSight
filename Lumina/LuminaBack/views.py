@@ -24,10 +24,13 @@ ticker = [
 
 def stock_information():
     # This function will fetch stock information from yfinance
+    # Check if the stock ticker exist, if it does, this will add it to dictionary of the ticker of the User. Or also add it to the search. This will be used in search, home, and portfolio template. This is the most cruical pieces lines of code.
+
+
     pass
 
 
-def index(request):
+def search(request):
     # This is the index view where we will display the home page/search page
     return render(request, 'base/search.html')
 
@@ -35,11 +38,12 @@ def home(request):
     return render(request, 'base/home.html')
 
 
-def portfolio_room(request, stock_tick):
+def portfolio_room(request):
     context = {'ticker': ticker}
     return render(request, 'portfolio_room.html', context)
 
-def stock(request):
+def stock(request, stock_tick):
+    stock_info = None
     context = {'ticker': ticker}
     return render(request, 'base/stock.html', context)
 
@@ -48,9 +52,7 @@ def portfolio(request):
     return render(request, 'portfolio.html')
 
 def signup(request):
-    
     return render(request, 'signup.html')
-
 
 
 
