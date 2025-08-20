@@ -3,7 +3,7 @@ from django.http import HttpResponse
 import yfinance as yf
 import matplotlib.pyplot as plt
 import csv as cs
-from .models import User, Portfolio
+from .models import Profile, Portfolio
 
 
 
@@ -15,23 +15,16 @@ user = "Louie"
 
 
 #  This is a list of stocks that we will use to display in the portfolio room
-ticker = [
-    {'id': 1, 'stock': 'AAPL'}, # We're eventually gonna add price
-    {'id': 2, 'stock': 'UNH' },
-    {'id': 3, 'stock': 'NVDA' },
+ticker = []
 
-]
-
-def stock_information():
-    # This function will fetch stock information from yfinance
-    # Check if the stock ticker exist, if it does, this will add it to dictionary of the ticker of the User. Or also add it to the search. This will be used in search, home, and portfolio template. This is the most cruical pieces lines of code.
-
-
-    pass
+def stock_information(ticker):
+    ticker_info = yf.ticker(ticker)
 
 
 def search(request):
     # This is the index view where we will display the home page/search page
+    if request.method == "GET":
+        return render(request, 'base/stock.html')
     return render(request, 'base/search.html')
 
 def home(request):
@@ -56,9 +49,6 @@ def portfolio(request):
 
 def signup(request):
     return render(request, 'signup.html')
-
-
-
 
 
 

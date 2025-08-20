@@ -27,7 +27,8 @@
    <div class="search-bar">
       <h1>Lumina</h1>
       <div class="search-container">
-         <form action="POST">
+         {% csrf_token %}
+         <form action="GET">
           <input type="text" placeholder="Search for Stocks..." name="search" required>
          <button type="submit">Search</button>
 

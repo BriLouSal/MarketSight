@@ -4,10 +4,10 @@ from django.contrib import admin
 
 
 
-from .models import User, Portfolio
+from .models import Profile, Portfolio
 
 
-admin.site.register(User)
+admin.site.register(Profile)
 
 
 
