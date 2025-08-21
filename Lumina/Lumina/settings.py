@@ -122,7 +122,7 @@ USE_TZ = True
 # This will allow us to ensure that CSS and JavaScript are connected to the Django documentation
 
 
-STATIC_URL = 'static/'
+STATIC_URL = 'LuminaBack/static/'
 
 
 STATICFILES_DIRS = [

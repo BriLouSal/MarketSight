@@ -23,8 +23,8 @@ def stock_information(ticker):
 
 def search(request):
     # This is the index view where we will display the home page/search page
-    if request.method == "GET":
-        return render(request, 'base/stock.html')
+
+    # Now we need to find how to redirect the search html -> stock.html
     return render(request, 'base/search.html')
 
 def home(request):
