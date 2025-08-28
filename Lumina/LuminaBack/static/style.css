@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body{
-    font-family:  "Geist", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
@@ -44,8 +44,7 @@ body{
 
 
 
-a
-{
+a{
     text-decoration: none;
     padding: 10px 15px;
     color: #fff;
@@ -59,16 +58,20 @@ a
     align-items: center;
     margin-top: 150px;
     gap: 15px;
+    font: white;
 
 
 }
 
-.top-performer{
+.greet_user{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+}
+.greet_user p{
+    color: white;
 }
 
 .top-performer h1{

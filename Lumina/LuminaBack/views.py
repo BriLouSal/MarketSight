@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import yfinance as yf
+import pandas as pd
 import matplotlib.pyplot as plt
 import csv as cs
 from .models import Profile, Portfolio
@@ -17,14 +17,20 @@ user = "Louie"
 #  This is a list of stocks that we will use to display in the portfolio room
 ticker = []
 
-def stock_information(ticker):
-    ticker_info = yf.ticker(ticker)
+
+
+def check_stock(ticker_symbol):
+    stock_info = None # We'll use this for try/exception to display yfinance data
+    pass
+
 
 
 def search(request):
     # This is the index view where we will display the home page/search page
-
     # Now we need to find how to redirect the search html -> stock.html
+
+
+
     return render(request, 'base/search.html')
 
 def home(request):
@@ -58,9 +64,6 @@ def login(request):
 
 def assistance(request):
     return render(request, 'Assistance.html')
-
-
-
 
 
 

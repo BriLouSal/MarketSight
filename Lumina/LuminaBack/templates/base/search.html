@@ -40,21 +40,22 @@
    </div>
 
    <!-- Div: Top Performer Today -->
- <div class="top-performer">
+ <div class="greet_user">
+
+   {% if user.is_authenticated %}
+      <p> Welcome! {{user.username}}</p>
+
+   {% else %}
+
+      <a href="{% url 'login' %}"> 
+         <p>Please Login to take advantage of our tools!. We Welcome you into the adventure of financial freedom!</p> 
+   </a>
   
-   <h1>Top Performer Today:</h1>
-   <!-- We're gonna have a if statement where if the user is logged in, they'll be able to see their biggest winner, if not; this will encourage the user to login, which will have a redirect <a> tag to the signup page. -->
-
-   
-
+   {% endif %}
  </div>
+
+
  {% endblock content %}
-
-
-
-
-
-
 
 </body>
 </html>
