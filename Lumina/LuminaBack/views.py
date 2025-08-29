@@ -59,7 +59,7 @@ def signup(request):
 
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'base/login.html')
 
 
 def assistance(request):
