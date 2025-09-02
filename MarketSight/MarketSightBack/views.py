@@ -10,7 +10,7 @@ from .models import Profile, Portfolio
 #  This is the views.py file where we will handle the logic for our application
 #  We will create views for home, portfolio room, stock, login, signup, and assistance
 
-user = "Louie"
+user = "Brain"
 
 
 
@@ -30,6 +30,7 @@ def check_stock(ticker_symbol):
 def search(request):
     # This is the index view where we will display the home page/search page
     # Now we need to find how to redirect the search html -> stock.html
+
 
 
 
@@ -53,11 +54,11 @@ def stock(request, stock_tick):
 
 
 def portfolio(request):
-    return render(request, 'portfolio.html')
+    return render(request, 'portfolio_room.html')
 
 def signup(request):
- 
-    return render(request, 'signup.html')
+
+    return render(request, 'base/signup.html')
 
 
 
