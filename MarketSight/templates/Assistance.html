@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static 'css/Assistance.css' %}"> -->
+     <link rel="stylesheet" href="/MarketSight/static/assistance.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- This will be like a border of the card that's gonna have support -->
+
+    
+    <button class="home-button", onclick="location.href='/MarketSight/templates/Home.html'">
+            <h1>Assistance</h1>
+            <p>Need help? Contact us for support.</p>
+    </button>
+
+  
+<!-- For this one, we wanna create specific support: input -->
+
+        <div class="border">
+            <h1>Contact Us</h1>
+            <form action="">
+                <label for="name">Name:</label>
+                <input type="text" id="inputbox" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="inputbox" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    
+</body>
+</html>
