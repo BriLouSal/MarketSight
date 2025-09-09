@@ -8,10 +8,22 @@
     <link rel="stylesheet" href="{% static 'signup.css'  %}">
 </head>
 <body>
+
+
+        <div class="navbar">
+        <a href="{% url 'assistance' %}">Support</a>
+        <a href="{% url 'room' %}">Portfolio</a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'login' %}">Login</a>
+
+        </div>
+
         <div class="border">
         <h1>Sign Up</h1>
 
-        <form action="/signup" method="post">
+
+        <form action="/signup" method="POST">
+            {% csrf_token %}
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password:</label>
@@ -19,6 +31,8 @@
             <button type="submit">Sign Up</button>
             <!-- And then we add if signup is clicked, it should add it to database -->
     </div>
+
+    
     
 
 

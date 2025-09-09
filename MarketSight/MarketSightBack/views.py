@@ -1,5 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.contrib import messages
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import csv as cs
@@ -13,7 +18,6 @@ from .models import Profile, Portfolio
 user = "Brain"
 
 
-
 #  This is a list of stocks that we will use to display in the portfolio room
 ticker = []
 
@@ -21,18 +25,11 @@ ticker = []
 
 
 
-def check_stock(ticker_symbol):
-    stock_info = None # We'll use this for try/exception to display yfinance data
-    pass
-
 
 
 def search(request):
     # This is the index view where we will display the home page/search page
     # Now we need to find how to redirect the search html -> stock.html
-
-
-
 
     return render(request, 'base/search.html')
 
@@ -58,7 +55,15 @@ def portfolio(request):
 
 def signup(request):
 
-    return render(request, 'base/signup.html')
+    # We need to gather information, and we also need to check if the username exists in the database. If it does not, it shall proceed towards the signup, if not then we'll add a message_flash to warn user that the username exists in the database.
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+    if User.objects.filter(username).exists():
+        return messages.error("This username already exists, please try again!")
+    else:   
+        return render(request, 'base/signup.html')
 
 
 
