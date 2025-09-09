@@ -39,6 +39,25 @@ form{
 
 
 
+.navbar{
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+a:link{
+    text-decoration: none;
+    color: #fff
+}
+
+
+a:visited{
+    text-decoration: none;
+    color: #fff;
+}
 
 input[type="text"],
 input[type="password"] {
@@ -68,6 +87,3 @@ button{
 
 }
 
-a:visited{
-    text-align: none;
-}

@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
+# User authentication library from Django
 from django.contrib.auth import login
 from django.contrib.auth.models import User
+
+
+# Investment Endeavors Library
+
 from django.contrib import messages
 
 import pandas as pd
@@ -56,18 +61,29 @@ def portfolio(request):
 def signup(request):
 
     # We need to gather information, and we also need to check if the username exists in the database. If it does not, it shall proceed towards the signup, if not then we'll add a message_flash to warn user that the username exists in the database.
-
     if request.method == 'POST':
+        email = request.POST.get('email')
+
+        
         username = request.POST.get('username')
+        
         password = request.POST.get('password')
-    if User.objects.filter(username).exists():
-        return messages.error("This username already exists, please try again!")
-    else:   
-        return render(request, 'base/signup.html')
+        
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "This username already exists, please try again!")
+            return render(request, 'base/signup.html')
+       
+        user = User.objects.create_user(username=username, password=password)
+        user.save()   
+        messages.success(request, "Successfully Signed up, please use login page!")
+       
+        redirect("base/login.html")
+
+    return render(request, 'base/signup.html')
 
 
 
-def login(request):
+def loginpage(request):
     return render(request, 'base/login.html')
 
 
