@@ -9,7 +9,7 @@
 </head>
 <body>
 
-        {% block content %}
+        {% block content%}
 
 
         <div class="navbar">
@@ -19,17 +19,6 @@
         <a href="{% url 'login' %}">Login</a>
 
         </div>
-
-
-
-        {% if messages %}
-
-            {% for messages in messages %} 
-            
-               <li style="color: red;"> {{messages}} </li>
-
-             {% endfor %}   
-        {% endif %}
 
 
         <div class="border">

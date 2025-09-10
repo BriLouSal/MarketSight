@@ -72,9 +72,14 @@ def signup(request):
         if User.objects.filter(username=username).exists():
             messages.error(request, "This username already exists, please try again!")
             return render(request, 'base/signup.html')
-       
+        
+            if User.objects.filler(email=email).exists():
+                pass
+        
         user = User.objects.create_user(username=username, password=password)
+       
         user.save()   
+  
         messages.success(request, "Successfully Signed up, please use login page!")
        
         redirect("base/login.html")
@@ -84,6 +89,21 @@ def signup(request):
 
 
 def loginpage(request):
+
+    # Check if user exists in the database, if not we can do a 
+
+    if request.method == "POST":
+        email = request.POST.get('email')
+       
+        username = request.POST.get('username')
+        if not User.objects.filter(username=username).exists():
+            messages.error(request, "This user does not exist, please signup or try again!")
+            return render(request, 'base/login.html')
+        else:
+            messages.success(request, "Login successful! Enjoy MarketSight!")
+            return render(request, 'base/login.html')
+        
+
     return render(request, 'base/login.html')
 
 

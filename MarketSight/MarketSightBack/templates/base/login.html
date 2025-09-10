@@ -11,6 +11,21 @@
 
 
     {% block content %}
+
+
+    {% if messages %}
+    <ul>
+        <div class="messages">
+            {% for messages in messages %}
+                <li>{{messages}}</li>
+            
+
+            {% endfor %}
+        </div>
+    </ul>
+
+
+    {% endif %}
   
     
         <div class="navbar">
