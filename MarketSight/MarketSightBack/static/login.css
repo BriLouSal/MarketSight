@@ -17,6 +17,8 @@ body{
 }
 
 
+
+
 .border{
     display: flex;
     flex-direction: column;
@@ -24,7 +26,7 @@ body{
     align-items: center;
     justify-content: center;
     color: white;
-    margin-top: 150px
+    margin-top: 50px
 
 }
 
@@ -42,9 +44,14 @@ form{
 .navbar{
     flex-direction: column;
     color: #fff;
+   
     align-items: center;
+   
     justify-content: center;
     
+    gap: 25px;
+
+
     
 }
 
@@ -68,9 +75,14 @@ input[type="password"] {
 }
 button{
     padding: 10px;
+   
     border: none;
     background-color: #007bff;
+   
     cursor: pointer;
+    border-radius: 5px 5px 5px 5px;
+
+    color: white;
 }
 .extra {
     padding: 10px 15x;

@@ -28,6 +28,9 @@ ticker = []
 
 
 
+def check_stock(request):
+    pass
+
 
 
 
@@ -35,6 +38,9 @@ ticker = []
 def search(request):
     # This is the index view where we will display the home page/search page
     # Now we need to find how to redirect the search html -> stock.html
+
+
+    # Check if the stock exists by using try and exception  (Error Handling)
 
     return render(request, 'base/search.html')
 
@@ -49,9 +55,13 @@ def portfolio_room(request):
 def stock(request, stock_tick):
     stock_info = None
     for i in ticker:
+        
         if i['id'] == str(stock_tick):
+            
             stock_info = i
+  
     context = {'ticker': ticker}
+   
     return render(request, 'base/stock.html', context)
 
 
@@ -96,19 +106,27 @@ def loginpage(request):
         email = request.POST.get('email')
        
         username = request.POST.get('username')
+
+        password = request.POST.get('password')
+
         if not User.objects.filter(username=username).exists():
             messages.error(request, "This user does not exist, please signup or try again!")
             return render(request, 'base/login.html')
+        
+        elif request.user.is_authenticated:
+            messages.error(request, "You're already authenticated!, No need to login again!")
+            return render(request, 'base/search.html')
         else:
             messages.success(request, "Login successful! Enjoy MarketSight!")
-            return render(request, 'base/login.html')
+            return render(request, 'base/search.html')
         
-
     return render(request, 'base/login.html')
 
 
+
+
 def assistance(request):
-    return render(request, 'Assistance.html')
+    return render(request, 'base/Assistance.html')
 
 
 
